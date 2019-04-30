@@ -1,0 +1,28 @@
+CREATE TABLE Cliente ( 
+	Usuario varchar (25) NOT NULL, 
+	Pass varchar (100), 
+	Tipo tinyint NOT NULL,
+	Maximo tinyint NOT NULL, 
+	Lleva tinyint NOT NULL, 
+	PRIMARY KEY (Usuario) 
+);
+
+CREATE TABLE Clase ( 
+	Dia tinyint NOT NULL, 
+	Hora tinyint NOT NULL,
+	Minuto tinyint NOT NULL,
+	Tipo tinyint NOT NULL,
+	Cupo tinyint NOT NULL, 
+	Cantidad tinyint NOT NULL, 
+	PRIMARY KEY (Dia, Hora, Minuto) 
+);
+
+CREATE TABLE Entrena ( 
+    	Usuario varchar (25) NOT NULL, 
+	Dia tinyint NOT NULL, 
+	Hora tinyint NOT NULL,
+	Minuto tinyint NOT NULL,
+	PRIMARY KEY (Usuario, Dia, Hora, Minuto),
+    FOREIGN KEY (Usuario) REFERENCES cliente(Usuario) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Dia, Hora, Minuto) REFERENCES Clase(Dia, Hora, Minuto) ON DELETE CASCADE ON UPDATE CASCADE
+);

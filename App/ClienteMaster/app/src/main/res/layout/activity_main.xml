@@ -10,17 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="net.jc_mouse.clienteandroid.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="IP" />
-
-    <EditText
-        android:digits=".1234567890"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtIP"/>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

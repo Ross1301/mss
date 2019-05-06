@@ -16,16 +16,15 @@ import java.net.UnknownHostException;
 class Comunicacion extends AsyncTask<String,Void,String>
 {
     private final int SERVERPORT = 7;
-    private String ADDRESS = "186.176.162.239";
+    private final String ADDRESS = "186.177.144.38";
 
     private MyEventListener callBack;
 
     private boolean error;
 
-    public Comunicacion(MyEventListener mel, String IP)
+    public Comunicacion(MyEventListener mel)
     {
         callBack = mel;
-        ADDRESS = IP;
     }
 
     @Override

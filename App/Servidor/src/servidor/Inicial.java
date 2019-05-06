@@ -429,11 +429,12 @@ public class Inicial extends javax.swing.JFrame
             
             bd.insertarClase(cDia, cHora, cMin, cTipo, 15, 0);
             
+            /*
             txtTipoClase.setText("");
             cmbDia.setSelectedIndex(0);
             cmbHora.setSelectedIndex(0);
             cmbMinuto.setSelectedIndex(0);
-            cmbTiempo.setSelectedIndex(0);
+            cmbTiempo.setSelectedIndex(0);*/
         }
     }//GEN-LAST:event_btnAgregarClaseActionPerformed
 

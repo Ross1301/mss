@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
     private Button btnReinicar;
 
     private EditText txtRespuesta;
-    private EditText txtIP;
 
     ProgressDialog progressDialog;
 
@@ -40,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
         btnReinicar = findViewById(R.id.btnReinicar);
 
         txtRespuesta = findViewById(R.id.txtRespuesta);
-        txtIP = findViewById(R.id.txtIP);
 
         accion = 0;
 
@@ -98,8 +96,7 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
 
         String mensaje = "4/";
 
-        String IP = txtIP.getText().toString();
-        Comunicacion comuni = new Comunicacion(mel, IP);
+        Comunicacion comuni = new Comunicacion(mel);
         comuni.execute(mensaje);
 
         progressDialog = new ProgressDialog(context);
@@ -127,8 +124,7 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
         {
             String mensaje = "5/";
 
-            String IP = txtIP.getText().toString();
-            Comunicacion comuni = new Comunicacion(mel, IP);
+            Comunicacion comuni = new Comunicacion(mel);
             comuni.execute(mensaje);
 
             progressDialog = new ProgressDialog(context);

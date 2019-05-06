@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
     private Button btnRetirar;
 
     private EditText txtAcceder;
-    private EditText txtIP;
 
     private Spinner spClase;
     private Spinner spReservadas;
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
         btnRetirar = findViewById(R.id.btnRetirar);
 
         txtAcceder = findViewById(R.id.txtAcceder);
-        txtIP = findViewById(R.id.txtIP);
 
         spClase = findViewById(R.id.spClase);
         spReservadas = findViewById(R.id.spReservadas);
@@ -206,8 +204,7 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
                 accion = 1;
                 String mensaje = "1/" + txtAcceder.getText().toString();
 
-                String IP = txtIP.getText().toString();
-                Comunicacion comuni = new Comunicacion(mel, IP);
+                Comunicacion comuni = new Comunicacion(mel);
                 comuni.execute(mensaje);
 
                 progressDialog = new ProgressDialog(context);
@@ -225,7 +222,6 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
         {
             btnAcceder.setText("Ingresar");
             txtAcceder.setEnabled(true);
-            txtIP.setEnabled(true);
             btnReservar.setEnabled(false);
             btnRetirar.setEnabled(false);
 
@@ -245,8 +241,7 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
         {
             String mensaje = "2/" + txtAcceder.getText().toString() + "*" + listDisponible.get(spClase.getSelectedItemPosition());
 
-            String IP = txtIP.getText().toString();
-            Comunicacion comuni = new Comunicacion(mel, IP);
+            Comunicacion comuni = new Comunicacion(mel);
             comuni.execute(mensaje);
 
             progressDialog = new ProgressDialog(context);
@@ -285,8 +280,7 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
                 {
                     String mensaje = "3/" + txtAcceder.getText().toString() + "*" + dato;
 
-                    String IP = txtIP.getText().toString();
-                    Comunicacion comuni = new Comunicacion(mel, IP);
+                    Comunicacion comuni = new Comunicacion(mel);
                     comuni.execute(mensaje);
 
                     progressDialog = new ProgressDialog(context);
@@ -310,8 +304,7 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
                 {
                     String mensaje = "3/" + txtAcceder.getText().toString() + "*" + dato;
 
-                    String IP = txtIP.getText().toString();
-                    Comunicacion comuni = new Comunicacion(mel, IP);
+                    Comunicacion comuni = new Comunicacion(mel);
                     comuni.execute(mensaje);
 
                     progressDialog = new ProgressDialog(context);
@@ -377,7 +370,6 @@ public class MainActivity extends AppCompatActivity implements MyEventListener
 
             btnAcceder.setText("Salir");
             txtAcceder.setEnabled(false);
-            txtIP.setEnabled(false);
             btnReservar.setEnabled(true);
             btnRetirar.setEnabled(true);
 

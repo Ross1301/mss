@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 public class Controlador 
 {
     private BaseDatos bd;
+    private int antes = 24;
     
     public Controlador()
     {
@@ -81,10 +82,10 @@ public class Controlador
 
             cTipo = bd.buscarTipoCliente(cUsuario);
 
-            if ((cHora + 12) > 24 )
+            if ((cHora + antes) > 24 )
             {
                 int cIni = cHora + 1;
-                int cFin = cHora - 12;
+                int cFin = cHora - 0; //12;
                 respuesta += bd.buscarClaseTipo(cUsuario, cTipo, cDia, cIni, 23);
                 respuesta += bd.buscarClaseTipo(cUsuario, cTipo, (cDia + 1), 0, cFin);
                 respuesta += "/";

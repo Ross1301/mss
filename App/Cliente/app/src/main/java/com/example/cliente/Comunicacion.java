@@ -16,7 +16,8 @@ import java.net.UnknownHostException;
 class Comunicacion extends AsyncTask<String,Void,String>
 {
     private final int SERVERPORT = 7;
-    private final String ADDRESS = "186.177.144.38";
+    //private final String ADDRESS = "186.177.144.38";
+    private final String ADDRESS = "186.176.162.239";
 
     private MyEventListener callBack;
 
